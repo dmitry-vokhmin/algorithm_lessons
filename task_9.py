@@ -13,14 +13,14 @@ print(*matrix, sep='\n')
 min_col_elem = [float("inf")] * len(matrix[0])
 max_elem = float("-inf")
 
-for row in matrix:
-    for idx, elem in enumerate(row):
-        if elem < min_col_elem[idx]:
-            min_col_elem[idx] = elem
-print(f"{min_col_elem=}")
+for i_row, row in enumerate(matrix):
+    for i_elem, elem in enumerate(row):
+        if elem < min_col_elem[i_elem]:
+            min_col_elem[i_elem] = elem
+        if i_row == len(matrix) - 1:
+            if min_col_elem[i_elem] > max_elem:
+                max_elem = min_col_elem[i_elem]
 
-for elem in min_col_elem:
-    if elem > max_elem:
-        max_elem = elem
+print(f"{min_col_elem=}")
 
 print(f"Max element: {max_elem}")
