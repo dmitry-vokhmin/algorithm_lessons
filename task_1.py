@@ -5,7 +5,8 @@ import hashlib
 Пусть на вход функции дана строка. Требуется вернуть количество различных подстрок в этой строке.
 """
 
-#
+
+
 def substring_sum(string):
     my_set = set()
     for i in range(len(string)):
